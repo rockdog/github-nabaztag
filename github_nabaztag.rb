@@ -47,5 +47,6 @@ get '/' do
 end
 
 post '/' do
-  GithubNabaztag.new(params[:payload])
+  puts params.inspect
+  # GithubNabaztag.new(params[:payload])
 end
