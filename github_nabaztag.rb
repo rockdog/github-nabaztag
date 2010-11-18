@@ -32,8 +32,6 @@ class GithubNabaztag
       'tts' => URI.encode(message)
     }
     
-    puts params.inspect
-
     response = Net::HTTP.start(uri.host, uri.port) { |http|
       http.request(Net::HTTP::Get.new(uri.path + "?" + params.collect {|k,v| "#{k.to_s}=#{v}" }.join('&')))
     }
