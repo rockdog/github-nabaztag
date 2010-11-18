@@ -1,10 +1,7 @@
 require 'rubygems'
 require 'net/http'
-require 'yaml'
 require 'json'
 require 'sinatra'
-
-CONF = YAML.load_file('config.yml')
 
 class GithubNabaztag
   
@@ -27,9 +24,10 @@ class GithubNabaztag
   def send
     uri = URI.parse(API_URL)
     
+    # http://api.nabaztag.com/docs/home.html
     params = {
-      'sn' => CONF['key'],
-      'token' => CONF['token'],
+      'sn' => ENV['NABAZTAG_API_SERIAL'],
+      'token' => ENV['NABAZTAG_API_TOKEN'],
       'voice' => 'UK-Shirley',
       'tts' => URI.encode(message)
     }

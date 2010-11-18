@@ -3,12 +3,8 @@ github-nabaztag
 
 Post your github pushes to your Nabaztag.
 
-requirements
-============
-sudo gem install json_pure sinatra
+instructions for heroku
+=======================
 
-instructions
-============
-cp config.yml.example config.yml
-nano config.yml
-ruby github_nabaztag.rb
+heroku config:add NABAZTAG_API_SERIAL=your_serial
+heroku config:add NABAZTAG_API_TOKEN=your_token
