@@ -1,0 +1,14 @@
+github-nabaztag
+===============
+
+Toss your github pushes to your Nabaztag.
+
+requirements
+============
+sudo gem install json_pure sinatra
+
+instructions
+============
+cp config.yml.example config.yml
+vim config.yml
+ruby github-nabaztag.rb
