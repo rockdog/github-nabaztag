@@ -16,7 +16,7 @@ class GithubNabaztag
   
   def message
     msg = "Repository #{@repository['name']} received new commits. "
-    msg += @commits.collect { |hash, commit| "#{commit['author']['name']} committed: #{commit['message']}"}.join('. ')
+    msg += @commits.collect { |commit| "#{commit['author']['name']} committed: #{commit['message']}"}.join('. ')
     msg += "."
     msg
   end
@@ -47,6 +47,5 @@ get '/' do
 end
 
 post '/' do
-  puts params.inspect
-  # GithubNabaztag.new(params[:payload])
+  GithubNabaztag.new(params[:payload])
 end
