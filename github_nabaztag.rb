@@ -19,7 +19,7 @@ class GithubNabaztag
   
   def message
     msg = "Repository #{@repository['name']} received new commits. "
-    msg += @commits.collect { |hash, commit| "#{commit['author']['name']} committed: #{commit['message']}"}.join('. ')
+    msg += @commits.collect { |commit| "#{commit['author']['name']} committed: #{commit['message']}"}.join('. ')
     msg += "."
     msg
   end
